@@ -85,7 +85,7 @@ static void motor_task(void *arg){
 
         // Publica estado do motor
         motor     = filtro;
-        rpm_atual = motor;   // "medido" = estado atual do motor simulado
+           // "medido" = estado atual do motor simulado
 
         char buf[96];
         snprintf(buf, sizeof(buf),
@@ -107,6 +107,7 @@ void ENC_SENSE(void *pvParameter){
             //print_msg(buffer);
             tick = 0;
         }
+        rpm_atual = motor;
         vTaskDelay(pdMS_TO_TICKS(5));
     }
 }
